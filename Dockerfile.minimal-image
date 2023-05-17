@@ -1,0 +1,23 @@
+# base image
+FROM golang:alpine as base
+WORKDIR /builder
+RUN apk add upx
+
+ENV GO111MODULE=on CGO_ENABLED=0
+
+COPY go.mod /builder/
+RUN go mod download
+
+COPY . .
+RUN go build \
+    -ldflags "-s -w" \
+    -o /builder/hello /builder/hello.go
+
+RUN upx -9 /builder/hello
+
+# runner image
+FROM scratch
+
+WORKDIR /
+COPY --from=base /builder/hello /hello 
+CMD ["./hello"]
