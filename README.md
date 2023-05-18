@@ -1,6 +1,6 @@
 # Otimizar imagem golang
 
-Aplicativo Go
+### Aplicativo Go de exemplo
 ```
 package main 
 
@@ -62,16 +62,16 @@ Build / Imagem / Run
 ### Resultado final
 ![image](https://github.com/and-araujo-cavalcante/minimizar-imagem-container-golang/assets/133878123/999c96d1-2349-4758-9469-cfdddb7e6ab7)
 
-Push da imagem no docker hub
+### Push da imagem no docker hub
 ```
 docker push andersoncavalcante/golang:minimal-image
 ```
-Pull da imagem no docker hub
+### Pull da imagem no docker hub
 ```
 docker pull andersoncavalcante/golang:minimal-image
 ```
 
-Docker hub
+### Docker hub
 https://hub.docker.com/repository/docker/andersoncavalcante/golang/general
 
 ### Referências
